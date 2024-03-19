@@ -1,0 +1,44 @@
+<div class="container">
+    <div class="wrapper">
+        <div class="product-box">
+            <div class="all-images">
+                <div class="small-images">
+                    <ng-container *ngFor="let img of product.images; let last = last">
+                        <img *ngIf="!last" src="{{ img }}" (click)="clicking($event.target)">
+                    </ng-container>
+                </div>
+                <div class="main-images">
+                    <img src={{product.thumbnail}} alt="" id="imagebox">
+                </div>
+            </div>
+        </div>
+        <div class="text">
+            <div class="content">
+                <p class="brand">Brand: {{product.brand}}</p>
+                <h2>{{product.title}}</h2>
+                <div class="review">
+                    <span>({{product.rating}})</span>
+                    <span class="fas fa-star"></span>
+                </div>
+                <div class="price-box">
+                    <p class="price">&#8377; {{product.price}}</p>
+                    <p>{{product.description}}</p>
+                </div>
+                
+                <div class="qunt">
+                    <span>Quantity: {{ count }}</span>
+                    <button (click)="incr()" [disabled]="isDisabled">+</button>
+                    <button (click)="decr()" [disabled]="isDisabled2">-</button>
+                </div>
+                <div class="buy">
+                    <button (click)="addtocart(product)" [disabled]="isItemStored">
+                        <span class="fas fa-shopping-cart"></span>{{isItemStored?"Added to Cart":"Add to Cart"}}
+                    </button>
+                    <button class="buynow-btn" (click)="checkOut(product)">
+                        <span class="fas fa-shopping-cart"></span>Buy now
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

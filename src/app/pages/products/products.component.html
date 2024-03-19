@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="filterBtn">
+        <button (click)="showAll()">Show All</button>
+        <button (click)="filterAll($event)" *ngFor="let category of categories | keyvalue">{{ category.key }}</button>
+    </div>
+
+    <div class="allcards">
+        <div class="card" *ngFor="let p of products">
+            <img src={{p.thumbnail}} alt={{p.title}}>
+            <div class="card-body">
+                <a class="card-title" routerLink="/product/{{p.id}}">{{p.title}}</a>
+                <div class="avl">
+                    <span class="rating">{{p.rating}}<i class="fas fa-star"></i></span>
+                    <span>({{p.stock}})</span>
+                </div>
+                <div class="price">
+                    <span>{{p.price | currency}}</span>
+                    <span class="discnt">{{p.discountPercentage}}% off</span>
+                </div>
+            </div>
+            <div class="cartBtn">
+                <button (click)="addtocart(p)">Add to cart</button>
+                <button (click)="removecart(p.id)">Remove</button>
+            </div>
+        </div>
+
+    </div>
+</div>

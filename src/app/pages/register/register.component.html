@@ -1,0 +1,75 @@
+<div class="main-Component">
+    <div class="container">
+        <div class="title">Registration</div>
+        <form action="#" #fm="ngForm" (ngSubmit)="submit(fm, un, phno, em, pwd, gndr)">
+            <div class="user-details">
+                <div class="input-box">
+                    <span class="details">Full Name</span>
+                    <input type="text" name="username" [(ngModel)]="username" ngModel #un="ngModel" placeholder="Enter Your Name" required>
+
+                    <div class="error" *ngIf="(fm.submitted||un.touched) && un.errors?.['required']">Full Name required</div>
+                </div>
+                <div class="input-box">
+                    <span class="details">Phone Number</span>
+                    <input type="text" name="phno" [(ngModel)]="phoneno" maxlength="10" ngModel #phno="ngModel" (keydown)="appNumbersOnly($event)"  pattern="[1-9]{1}[0-9]{9}" placeholder="Enter Your Number" required>
+
+                    <div class="error" *ngIf="(fm.submitted||phno.touched) && phno.errors?.['required']">Phone Number required</div>
+                    <div class="error" *ngIf="(fm.submitted||phno.touched) && phno.errors?.['maxlength']">Enter Valid Number</div>
+                </div>
+                <div class="input-box">
+                    <span class="details">Email ID</span>
+                    <input type="email" name="email" [(ngModel)]="emailid" ngModel #em="ngModel" placeholder="Enter Your Email" pattern="^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$" required>
+
+                    <div class="error" *ngIf="(fm.submitted||em.touched) && em.errors?.['required']">Email required</div>
+                    <div class="error" *ngIf="(fm.submitted||em.touched) && em.errors?.['pattern']">write a valid email</div>
+                </div>
+                <div class="input-box">
+                    <span class="details">Password</span>
+                    <input type="password" name="password" [(ngModel)]="pass" ngModel #pwd="ngModel" placeholder="Enter Your Password" minlength="8" maxlength="10" required>
+
+                    <div class="error" *ngIf="(fm.submitted||pwd.touched) && pwd.errors?.['required']">Password required</div>
+                    <div class="error" *ngIf="(fm.submitted||pwd.touched) && pwd.errors?.['minlength']">Enter minimum 8 characters</div>
+                </div>
+                <div class="input-box">
+                    <span class="details">Confirm Password</span>
+                    <input type="text" ngModel #cpwd="ngModel" name="cpassword" placeholder="Confirm Your Password" required>
+
+                    <div class="error" *ngIf="pwd.value != cpwd.value">Passwords do not match</div>
+                    <div class="error" *ngIf="(fm.submitted||cpwd.touched) && cpwd.errors?.['required']">Confirm Password required</div>
+                </div>
+                <div class="input-box">
+                    <span class="details">Select Your Gender</span>
+                    <select name="gender" [(ngModel)]="gen" ngModel #gndr="ngModel" required>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Transgender">Transgender</option>
+                    </select>
+
+                    <div class="error" *ngIf="(fm.submitted||gndr.touched) && gndr.errors?.['required']">Gender required</div>
+                </div>
+            </div>
+    
+            <div class="button">
+                <input type="submit" value="Register" >
+            </div>
+        </form>
+        <div class="line"></div>
+
+        <div class="all-media">
+            <div class="media-options">
+                <a class="field google" (click)="loginWithGoogle()">
+                    <img src="../../../assets/google.png" alt="google-logo" class="google-img">
+                    <span class="lwg">Login with Google</span>
+                    <span class="g">Google</span>
+                </a>
+            </div>
+            <div class="media-options">
+                <a class="field facebook" (click)="loginWithFacebook()">
+                    <i class="fab fa-facebook-f facebook-icon"></i>
+                    <span class="lwf">Login with Facebook</span>
+                    <span class="f">Facebook</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

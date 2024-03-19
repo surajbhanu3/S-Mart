@@ -1,0 +1,44 @@
+<div class="contactus">
+    <div class="container">
+        <div class="text">Support Team</div>
+        <form action="#">
+            <div class="form-row">
+                <div class="input-data">
+                    <input type="text" required>
+                    <div class="underline"></div>
+                    <label for="">First Name</label>
+                </div>
+                <div class="input-data">
+                    <input type="text" required>
+                    <div class="underline"></div>
+                    <label for="">Last Name</label>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="input-data">
+                    <input type="text" name="email" required>
+                    <div class="underline"></div>
+                    <label for="email">Email ID</label>
+                </div>
+                <div class="input-data">
+                    <input type="text" name="phno" maxlength="10" (keydown)="appNumbersOnly($event)"  pattern="[1-9]{1}[0-9]{9}" required>
+                    <div class="underline"></div>
+                    <label for="phno">Phone Number</label>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="input-data textarea">
+                    <textarea name="msg" cols="30" rows="10" required></textarea>
+                    <div class="underline"></div>
+                    <label for="msg">Write your message</label>
+                </div>
+            </div>
+            <div class="form-row submit-btn">
+                <div class="input-data">
+                    <div class="inner"></div>
+                    <input type="submit" value="Send">
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

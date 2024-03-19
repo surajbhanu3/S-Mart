@@ -1,0 +1,152 @@
+.container{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container .form{
+    max-width: 430px;
+    width: 100%;
+    padding: 20px 25px;
+    border-radius: 6px;
+    background-color: var(--text-color);
+}
+.container .form .form-content h3{
+    font-size: 28px;
+    font-weight: 600;
+    color: #232836;
+    text-align: center;
+}
+.container .form .form-content form{
+    margin-top: 20px;
+}
+.form .field{
+    position: relative;
+    height: 50px;
+    width: 100%;
+    margin-top: 15px;
+    border-radius: 6px;
+}
+.form-content form .field input,
+.form-content form .field button{
+    height: 100%;
+    width: 100%;
+    border: none;
+    font-size: 16px;
+    font-weight: 400;
+    border-radius: 6px;
+}
+.form-content form .field input{
+    padding: 0 15px;
+    outline: none;
+    background: var(--text-color);
+    border: 1px solid var(--footer-bg);
+}
+.form-content form .password{
+    margin-top: 30px;
+}
+.form-content form .field input:focus{
+    border-bottom-width: 2px;
+}
+.form-content form .field .error{
+    color: red;
+    font-size: small;
+    margin: 2px 0 0 10px;
+}
+.form-content form .field button{
+    color: #fff;
+    background-color: #0171d3;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.form-content form .field button:hover{
+    background-color: #005bab;
+}
+.form-content form .field .eye-icon{
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color: #8b8b8b;
+    cursor: pointer;
+    padding: 5px;
+}
+.form-link{
+    text-align: center;
+    margin-top: 10px;
+}
+.form-link span,
+.form-link a{
+    font-size: 14px;
+    font-weight: 400;
+}
+.form-content form .forgot-pass{
+    text-align: end;
+}
+.container .form a{
+    color: #0171d3;
+    text-decoration: none;
+}
+.container .form a:hover{
+    text-decoration: underline;
+}
+.container .form .line{
+    position: relative;
+    height: 1px;
+    width: 100%;
+    margin: 20px 0;
+    background-color: var(--footer-bg);
+}
+.container .form .line::before{
+    content: 'Or';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--text-color);
+    color: #232836;
+    padding: 0 15px;
+}
+.container .form .media-options a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    cursor: pointer;
+}
+.container .form .media-options a.facebook{
+    color: #fff;
+    background-color: #4267b2;
+}
+a.facebook .facebook-icon{
+    height: 28px;
+    width: 28px;
+    font-size: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #0171d3;
+    background-color: #fff;
+}
+.facebook-icon,
+a.google img.google-img{
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+}
+a.google{
+    border: 1.5px solid var(--footer-bg);
+}
+a.google span{
+    color: var(--footer-bg);
+    font-weight: 500;
+}
+a.google img.google-img{
+    height: 20px;
+    width: 20px;
+    object-fit: cover;
+}

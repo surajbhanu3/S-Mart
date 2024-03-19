@@ -1,0 +1,55 @@
+<nav [ngClass]="{'active': isOpened}">
+  <div class="nav-bar">
+      <i class="fas fa-bars sidebarOpen" (click)="openSlide()"></i>
+      <span class="logo navLogo"><a routerLink="/">S-Mart</a></span>
+      <div class="menu">
+          <div class="logo-toggle">
+              <span class="logo"><a routerLink="/">S-Mart</a></span>
+              <i class="fas fa-xmark siderbarClose" (click)="openSlide()"></i>
+          </div>
+
+          <ul class="nav-links">
+              <li *ngIf="logoutBtn else homeNav"><a routerLink="/dashboard" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="searchHide()">Home</a></li>
+
+              <ng-template #homeNav>
+                  <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="searchHide()">Home</a></li>
+              </ng-template>
+              
+              <li><a routerLink="/products" routerLinkActive="active">Products</a></li>
+              <li><a routerLink="/about" routerLinkActive="active" (click)="searchHide()">About</a></li>
+              <li><a routerLink="/contact" routerLinkActive="active" (click)="searchHide()">Contact</a></li>
+
+              <li style="cursor: pointer;" *ngIf="logoutBtn else otherBtn"><a class="spl-nav" (click)="logout()">Logout</a></li>
+
+              <ng-template #otherBtn>
+                  <li><a routerLink="/login" class="spl-nav" (click)="searchHide()">Login</a></li>
+              </ng-template>
+
+          </ul>
+      </div>
+      <div class="darkLight-searchBox-cart">
+          <div class="dark-light" (click)="darkOn()" [ngClass]="{'active': isDarkMode}">
+              
+              <i class="fas fa-sun sun" *ngIf="isDarkMode else dm"></i>
+              <ng-template #dm>
+                  <i class="fas fa-moon moon"></i>
+              </ng-template>
+          </div>
+          <div class="searchBox" *ngIf="pagename === 'products'">
+              <div class="searchToggle" (click)="searchOn()" [ngClass]="{'active': isSearchMode}">
+                  <i class="fas fa-xmark cancel"></i>
+                  <i class="fas fa-magnifying-glass search"></i>
+              </div>
+
+              <div class="search-field">
+                  <input type="text" placeholder="Search items" [(ngModel)]="st" (input)="searchProduct()">
+                  <i class="fas fa-magnifying-glass" (click)="searchProduct()"></i>
+              </div>
+          </div>
+          <div class="cart">
+              <i routerLink="/cart" class="fas fa-cart-shopping" (click)="searchHide()"></i>
+          </div>
+          <div routerLink="/cart" class="count" (click)="searchHide()">{{c}}</div>
+      </div>
+  </div>
+</nav>

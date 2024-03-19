@@ -1,0 +1,164 @@
+footer{
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    background-color: var(--footer-bg);
+    color: var(--text-color);
+}
+footer .main-content{
+    display: flex;
+}
+footer .main-content .box{
+    flex-basis: 50%;
+    padding: 10px 20px;
+}
+footer .main-content .box h2{
+    font-size: 1.125rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+footer .main-content .box .content{
+    margin: 20px 0 0 0;
+    position: relative;
+}
+footer .main-content .box .content::before{
+    position: absolute;
+    content: '';
+    top: -10px;
+    width: 100%;
+    height: 2px;
+    background-color: #646464;
+}
+footer .main-content .box .content::after{
+    position: absolute;
+    content: '';
+    height: 2px;
+    width: 15%;
+    background-color: #f12020;
+    top: -10px;
+}
+.main-content .left .content p{
+    text-align: justify;
+}
+.main-content .left .content .social{
+    margin: 20px 0 0 0;
+}
+.main-content .left .content .social a{
+    color: var(--text-color);
+    padding: 0 2px;
+    transition: all 0.3s ease;
+}
+.main-content .left .content .social a i{
+    height: 40px;
+    width: 40px;
+    background-color: var(--social-clr);
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 18px;
+    transition: all 0.3s ease;
+}
+.main-content .left .content .social a:hover{
+    color: var(--social-clr);
+}
+.main-content .left .content .social a i:hover{
+    background: none;
+    transform: scale(1.7);
+}
+.main-content .center .content span.icon{
+    font-size: 1.2rem;
+    border-radius: 50%;
+    height: 42px;
+    width: 42px;
+    line-height: 42px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.main-content .center .content span.icon:hover{
+    background: var(--all-clr);
+    transform: scale(1.2);
+}
+.main-content .center .content .text{
+    font-size: 1.06rem;
+    font-weight: 500;
+    padding-left: 10px;
+}
+.main-content .center .content .phone{
+    margin: 10px 0;
+}
+.main-content .right form .text{
+    font-size: 1.06rem;
+    margin-bottom: 2px;
+    color: var(--search-text);
+}
+.main-content .right form .msg{
+    margin-top: 10px;
+}
+.main-content .right form input,
+.main-content .right form textarea{
+    width: 100%;
+    font-size: 1.06rem;
+    background: #858484;
+    color: var(--text-color);
+    padding-left: 10px;
+    border: 1px solid #222;
+    outline: none;
+}
+.main-content .right form input{
+    height: 35px;
+}
+.main-content .right form textarea{
+    resize: none;
+}
+.main-content .right form input:focus,
+.main-content .right form textarea:focus{
+    border: 1px solid #0c00ed;
+}
+.main-content .right form .contact-us-btn{
+    margin-top: 10px;
+}
+.main-content .right form .contact-us-btn button{
+    height: 40px;
+    width: 100%;
+    border: none;
+    outline: none;
+    color: var(--text-color);
+    background: #f12020;
+    font-size: 1.06rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.main-content .right form .contact-us-btn button:hover{
+    background-color: #222;
+}
+footer .bottom .center{
+    padding: 5px;
+    font-size: 0.9375rem;
+    background-color: #151515;
+    text-align: center;
+}
+footer .bottom .center span{
+    color: #cfcfcf;
+}
+footer .bottom .center span a{
+    color: #f12020;
+    text-decoration: none;
+}
+footer .bottom .center span a:hover{
+    text-decoration: underline;
+}
+@media screen and (max-width: 900px) {
+    footer{
+        position: relative;
+        bottom: 0px;
+    }
+    footer .main-content{
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+    footer .main-content .box{
+        margin: 5px 0;
+    }
+}

@@ -1,0 +1,47 @@
+<section class="container forms">
+    <div class="form login">
+        <div class="form-content">
+            <h3>Login</h3>
+
+            <form #fm="ngForm" (ngSubmit)="login(em,pwd)">
+                <div class="field input-field">
+                    <input type="email" name="email" ngModel #em="ngModel" pattern="^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$" placeholder="Enter Email" required>
+                    
+                    <div class="error" *ngIf="(fm.submitted||em.touched) && em.errors?.['required']">Email required</div>
+                    <div class="error" *ngIf="(fm.submitted||em.touched) && em.errors?.['pattern']">write a valid email</div>
+                </div>
+                <div class="field input-field password">
+                    <input [type]="showPassword ? 'text' : 'password'" name="password" placeholder="Enter Password" ngModel #pwd="ngModel" minlength="8" required>
+                    <i class="fas eye-icon" [class.fa-eye-slash]="!showPassword" [class.fa-eye]="showPassword" (click)="clicking()"></i>
+                    
+                    <div class="error" *ngIf="(fm.submitted||pwd.touched) && pwd.errors?.['required']">PassWord required</div>
+                    <div class="error" *ngIf="(fm.submitted||pwd.touched) && pwd.errors?.['minlength']">Enter minimum 8 characters</div>
+                </div>
+                <div class="form-link forgot-pass">
+                    <a href="#">Forgot Password?</a>
+                </div>
+                <div class="field button-field">
+                    <button type="submit">Login</button>
+                </div>
+            </form>
+
+            <div class="form-link">
+                <span>Don't have Account? <a routerLink="/register" class="signup-link">Signup</a></span>
+            </div>
+        </div>
+        <div class="line"></div>
+
+        <div class="media-options">
+            <a class="field google" (click)="loginWithGoogle()">
+                <img src="../../../assets/google.png" alt="google-logo" class="google-img">
+                <span>Login with Google</span>
+            </a>
+        </div>
+        <div class="media-options">
+            <a class="field facebook" (click)="loginWithFacebook()">
+                <i class="fab fa-facebook-f facebook-icon"></i>
+                <span>Login with Facebook</span>
+            </a>
+        </div>
+    </div>
+</section>

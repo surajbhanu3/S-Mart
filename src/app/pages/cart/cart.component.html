@@ -1,0 +1,53 @@
+<div class="main-cart">
+    <div class="small-container cart-page">
+        <table>
+            <tr>
+                <th>Products</th>
+                <th>Quantity</th>
+                <th>Subtotal</th>
+            </tr>
+            <tr *ngFor="let item of productLength">
+                <td>
+                    <div class="cart-info">
+                        <img src={{item.thumbnail}} alt={{item.title}} routerLink="/product/{{item.id}}">
+                        <div>
+                            <p routerLink="/product/{{item.id}}">{{item.title}}</p>
+                            <small>price: {{item.price | currency}}</small><br>
+                            <button (click)="removecart(item.id)">Remove</button>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="qunt">
+                        <button (click)="incr(item)" [disabled]="item.isDisabled">+</button>
+                        <span>{{ item.count }}</span>
+                        <button (click)="decr(item)" [disabled]="item.isDisabled2">-</button>
+                    </div>
+                </td>
+                <td>{{ calculateTotalPrice(item) | currency }}</td>
+            </tr>
+        </table>
+    
+        <div class="total-price">
+            <table>
+                <tr>
+                    <td>Subtotal :</td>
+                    <td>{{ TotalPrice() | currency }}</td>
+                </tr>
+                <tr>
+                    <td>Tax :</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td>Total :</td>
+                    <td>{{ TotalPrice() | currency }}</td>
+                </tr>
+                <tr>
+                    <div class="btns">
+                        <button (click)="checkOut()">Checkout</button>
+                    </div>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

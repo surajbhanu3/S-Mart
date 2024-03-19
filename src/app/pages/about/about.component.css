@@ -1,0 +1,120 @@
+.wrapper{
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #ffffff68;
+}
+.wrapper .row{
+    width: 100%;
+    padding: 30px;
+}
+.image-section{
+    width: 30%;
+    float: left;
+}
+.image-section img{
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+.content{
+    width: 60%;
+    float: left;
+    margin-left: 50px;
+}
+.content h1{
+    font-size: 60px;
+    letter-spacing: 3.5px;
+    margin-top: 25px;
+    text-align: center;
+    color: #222;
+    font-family: 'Lobster', cursive;
+}
+.content h2{
+    font-size: 35px;
+    font-family: 'sans-serif', cursive;
+    color: #b60112;
+}
+.content h2::after{
+    content: '';
+    height: 3px;
+    width: 130px;
+    background-color: #b60112;
+    border-radius: 20px;
+    display: block;
+}
+.content p{
+    font-size: 18px;
+    font-weight: 500;
+    font-family: serif;
+    margin-top: 10px;
+    line-height: 1.2;
+    text-align: justify;
+}
+.content .buttons{
+    margin-top: 20px;
+}
+.content .buttons a{
+    text-decoration: none;
+    padding: 7px 20px;
+    background-color: var(--notfount-clr);
+    color: var(--search-bar);
+    border-radius: 40px;
+    font-size: 16px;
+    letter-spacing: 1.2px;
+    transition: all 0.2s ease;
+}
+.content .buttons a:hover{
+    background-color: #c715d4;
+}
+.wrapper .social{
+    margin: 20px 0;
+}
+.social a{
+    color: var(--text-color);
+    padding: 0 5px;
+    transition: all 0.2s ease;
+}
+.social a:hover{
+    color: var(--social-clr);
+}
+.social a i{
+    height: 40px;
+    width: 40px;
+    background-color: var(--social-clr);
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 18px;
+    transition: all 0.3s ease;
+}
+.social a i:hover{
+    background: none;
+    transform: scale(1.5);
+}
+@media screen and (max-width: 768px) {
+    .image-section{
+        width: 100%;
+        float: none;
+    }
+    .content{
+        width: 100%;
+        float: none;
+        margin-left: 0;
+    }
+    .content h1{
+        font-size: 40px;
+        letter-spacing: 2.5px;
+        margin-top: 30px;
+    }
+    .content h2{
+        font-size: 25px;
+    }
+    .content h2::after{
+        width: 95px;
+    }
+}

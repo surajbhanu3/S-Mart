@@ -1,0 +1,117 @@
+.container{
+    position: relative;
+    max-width: 1350px;
+    width: 100%;
+    margin: 7px auto 20px;
+    padding: 20px;
+}
+.container .filterBtn{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+.container .filterBtn button{
+    flex-grow: 1;
+    cursor: pointer;
+    text-transform: capitalize;
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 6px;
+    background-color: #e0e0e0;
+    border: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    transition: all 0.3 ease;
+}
+.container .filterBtn button:hover{
+    background-color: #ffffff;
+}
+.container .allcards{
+    margin-top: 25px;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+.allcards .card{
+    flex-grow: 1;
+    /* max-width: 290px; */
+    flex-basis: 290px;
+    background-color: var(--text-color);
+    padding: 10px;
+    border-radius: 10px 10px 0 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+.allcards .card img{
+    width: 100%;
+    height: 160px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px 10px 0 0;
+}
+.allcards .card .card-body{
+    text-align: center;
+}
+.allcards .card .card-body .card-title{
+    font-size: 20px;
+    font-weight: 500;
+    color: #333;
+    cursor: pointer;
+    text-decoration: none;
+}
+.allcards .card .card-body .card-title:hover{
+    text-decoration: underline;
+    color: #aa00ff;
+}
+.allcards .card .card-body .avl,
+.allcards .card .card-body .price{
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin: 5px 0;
+}
+.allcards .card .card-body .avl span{
+    font-size: 15px;
+    color: #777777;
+}
+.allcards .card .card-body .avl span.rating{
+    background-color: #4caf50;
+    color: #fff;
+    padding: 2px 6px;
+    border-radius: 6px;
+    font-size: small;
+    user-select: none;
+}
+.allcards .card .card-body .price span{
+    color: black;
+    font-weight: 500;
+}
+.allcards .card .card-body .price span.discnt{
+    color: #4caf50;
+    font-size: small;
+    font-weight: 700;
+}
+.allcards .card .cartBtn{
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    align-items: center;
+}
+.allcards .card .cartBtn button{
+    border: 1px solid black;
+    background-color: #e0e0e0;
+    color: #000;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    text-transform: capitalize;
+    padding: 10px 15px;
+    font-size: 18px;
+    border-radius: 6px;
+    border: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+.allcards .card .cartBtn button:hover{
+    background-color: #ffffff;
+}
+.allcards .card .cartBtn button:disabled{
+    background-color: var(--footer-bg);
+}

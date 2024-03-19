@@ -1,0 +1,148 @@
+.main-cart{
+    margin: 0 20px;
+    background: #ffffff8d;
+    border-radius: 15px;
+}
+.cart-page{
+    margin: 80px auto;
+    padding: 30px;
+}
+.cart-page table{
+    width: 100%;
+    border-collapse: collapse;
+}
+.cart-info{
+    display: flex;
+    flex-wrap: wrap;
+}
+th{
+    text-align: left;
+    padding: 5px;
+    color: #fff;
+    background: #ff523b;
+    font-weight: normal;
+}
+td{
+    padding: 10px 5px;
+}
+.cart-info p{
+    cursor: pointer;
+}
+td img{
+    width: 80px;
+    height: 80px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+td button{
+    color: #ff523b;
+    border: none;
+    margin-top: 5px;
+    background: #fff;
+    padding: 4px 5px;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+td button:hover{
+    background-color: #e0e0e0;
+}
+.total-price{
+    display: flex;
+    justify-content: flex-end;
+}
+.total-price table{
+    border-top: 3px solid #ff523b;
+    width: 100%;
+    max-width: 450px;
+}
+td:last-child,
+th:last-child{
+    text-align: right;
+    padding-right: 20px;
+}
+th:first-child,
+td:first-child{
+    padding-left: 20px;
+}
+th:nth-child(2){
+    text-align: center;
+}
+.qunt{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+.qunt button{
+    height: 30px;
+    width: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 18px;
+    outline: none;
+    cursor: pointer;
+    background-color: #00ffff;
+    border: 1px solid blue;
+    transition: all 0.3s ease;
+}
+.qunt button:hover{
+    background-color: #0adcdc;
+}
+.qunt button:disabled{
+    background-color: #0a8f8f;
+    color: #fff;
+}
+
+.btns{
+    position: relative;
+    left: 70%;
+}
+.btns button{
+    padding: 8px 11px;
+    border-radius: 10px;
+    font-size: 17px;
+    font-weight: 500;
+    outline: none;
+    cursor: pointer;
+    background-color: #ff9800;
+    border: 1px solid #ff523b;
+    transition: all 0.3s ease;
+}
+.btns button:hover{
+    background-color: #ff5722;
+}
+
+@media only screen and (max-width: 600px){
+    .cart-info{
+        display: block;
+    }
+    td:last-child,
+    th:last-child{
+        padding-right: 5px;
+    }
+    th:first-child,
+    td:first-child{
+        padding-left: 5px;
+    }
+    td:nth-child(2){
+        text-align: center;
+    }
+    .total-price table td:last-child{
+        text-align: end;
+    }
+    .qunt{
+        gap: 10px;
+    }
+    .qunt button{
+        height: 25px;
+        width: 25px;
+    }
+    .btns{
+        left: 50%;
+    }
+}
